@@ -10,41 +10,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const seedQuestions = [
-  {
-    question: "Which language is primarily used to style web pages?",
-    options: ["HTML", "CSS", "JavaScript", "SQL"],
-    correctAnswer: 1,
-  },
-  {
-    question: "Which JavaScript method adds an item to the end of an array?",
-    options: ["pop()", "shift()", "push()", "unshift()"],
-    correctAnswer: 2,
-  },
-  {
-    question: "What does MongoDB store data as?",
-    options: ["Tables", "BSON documents", "CSV rows", "XML files"],
-    correctAnswer: 1,
-  },
-  {
-    question: "Which HTTP method is commonly used to create a resource?",
-    options: ["GET", "POST", "TRACE", "HEAD"],
-    correctAnswer: 1,
-  },
-  {
-    question: "Which hook manages state in a React function component?",
-    options: ["useState", "useFetch", "useStyle", "useServer"],
-    correctAnswer: 0,
-  },
-];
-
-async function seedIfEmpty() {
-  if ((await Question.countDocuments()) === 0) {
-    await Question.insertMany(seedQuestions);
-    console.log("Seeded sample examination questions.");
-  }
-}
-
 app.get("/api/questions", async (req, res, next) => {
   try {
     const questions = await Question.aggregate([
@@ -123,8 +88,7 @@ const port = process.env.PORT || 8080;
 
 mongoose
   .connect(mongoUri)
-  .then(async () => {
-    await seedIfEmpty();
+  .then(() => {
     app.listen(port, () => console.log(`Examination server listening on port ${port}`));
   })
   .catch((error) => {

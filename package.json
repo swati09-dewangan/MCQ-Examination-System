@@ -5,6 +5,7 @@
   "scripts": {
     "start": "node app.js",
     "server": "node app.js",
+    "seed": "node seed.js",
     "client": "vite --config client/vite.config.mjs",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "build": "vite build --config client/vite.config.mjs",

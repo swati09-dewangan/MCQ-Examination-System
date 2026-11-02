@@ -1,0 +1,27 @@
+[
+  {
+    "question": "Which language is primarily used to style web pages?",
+    "options": ["HTML", "CSS", "JavaScript", "SQL"],
+    "correctAnswer": 1
+  },
+  {
+    "question": "Which JavaScript method adds an item to the end of an array?",
+    "options": ["pop()", "shift()", "push()", "unshift()"],
+    "correctAnswer": 2
+  },
+  {
+    "question": "What does MongoDB store data as?",
+    "options": ["Tables", "BSON documents", "CSV rows", "XML files"],
+    "correctAnswer": 1
+  },
+  {
+    "question": "Which HTTP method is commonly used to create a resource?",
+    "options": ["GET", "POST", "TRACE", "HEAD"],
+    "correctAnswer": 1
+  },
+  {
+    "question": "Which hook manages state in a React function component?",
+    "options": ["useState", "useFetch", "useStyle", "useServer"],
+    "correctAnswer": 0
+  }
+]
